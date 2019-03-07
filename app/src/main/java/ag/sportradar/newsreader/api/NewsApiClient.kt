@@ -1,5 +1,6 @@
 package ag.sportradar.newsreader.api
 
+import ag.sportradar.newsreader.api.model.NewsData
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
