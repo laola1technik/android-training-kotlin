@@ -1,16 +1,17 @@
 package ag.sportradar.newsreader
 
 import ag.sportradar.newsreader.api.NewsApiClient
-import ag.sportradar.newsreader.api.NewsData
+import ag.sportradar.newsreader.api.model.NewsData
 import ag.sportradar.newsreader.api.OnNewsDataFetchedListener
 import android.support.v7.app.AppCompatActivity
+
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), OnNewsDataFetchedListener {
 
     override fun onNewsDataFetched(data: NewsData) {
-        responseData.text = data.status
+        responseData.text = data.status+", "+data.totalResults+", "+data.articles.size
     }
 
     override fun onFailure(message: String) {
